@@ -42,7 +42,3 @@ desktop.ini
 *.swp
 *.swo
 *.orig
-
-# Input/output files
-input.txt
-output.txt
