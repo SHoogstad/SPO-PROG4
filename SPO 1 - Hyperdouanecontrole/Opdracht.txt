@@ -1,0 +1,25 @@
+/**
+ * TINPRO04-4 Les 4
+ * SPO 1 - Hyperdouanecontrole
+ * 20240422 // m.skelo@hr.nl
+ */
+
+De haven van Rotterdam heeft na alle technologische innovaties van afgelopen kwartaal denderend succes geboekt!
+Er komen meer vrachtwagens dan ooit door de haven, en eigenlijk begint de haven nu aan haar eigen succes ten onder te gaan.
+De douane heeft haar capaciteit nooit vergroot, waardoor alle vrachtwagens nu in een kilometerslange 
+rij staan te wachten om langs de eenzame douanebeambte te gaan.
+
+De haven heeft plannen aangekondigd om de douanecapaciteit te vergroten met revolutionaire, nieuwe "multidouane"-technologie.
+Dit magische systeem zorgt ervoor dat de douane zich aanpast aan de hoeveelheid vrachtwagens die voor die dag op de lijst staan.
+De lijst van vandaag is te vinden in input.txt
+
+Het systeem 'knipt' de lijst in kleinere lijsten, en de vrachtwagens moeten zo voorsorteren voor hun "rijstrook".
+Zo wordt iedere nieuwe wachtrij flink korter, en kunnen meerdere douanechecks tegelijk plaatsvinden!
+
+OPDRACHT:
+=========================================================================
+- Lees de lijst met Vrachtwagens in, en converteer ze naar de juiste datatypes (zie Vrachtwagen en Container)
+- Knip de 'grote taak' in stukken en voer ze parallel uit.
+- Stuur alle Vrachtwagens door de controle. Print de inhoud van de Containers die niet door de controle komen op het scherm.
+
+
