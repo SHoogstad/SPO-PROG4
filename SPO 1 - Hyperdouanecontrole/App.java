@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
-        List<String> lines = new ArrayList<>();
+        List<String> lines;
         List<Vrachtwagen> kade = new ArrayList<>();
 
         // Input lezen uit bestand
