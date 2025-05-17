@@ -4,6 +4,10 @@
  * 20240426 // m.skelo@hr.nl
  */
 
+import Part1.Container;
+import Part1.Douane;
+import Part1.Vrachtwagen;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -17,7 +21,7 @@ public class App {
 
         // Input lezen uit bestand
         try {
-            lines = Files.readAllLines(Paths.get("SPO 1 - Hyperdouanecontrole/input.txt"));
+            lines = Files.readAllLines(Paths.get("SPO 1 - Hyperdouanecontrole/Part1/input.txt"));
         } catch (IOException e) {
             System.out.println("Fout bij lezen van input.txt");
             e.printStackTrace();
@@ -51,12 +55,12 @@ public class App {
             List<Vrachtwagen> deel = kade.subList(begin, eind);
             Douane d = new Douane(deel);
             douanes.add(d);
-            d.start(); // Start de douane-thread
         }
 
         // Wachten op alle douanes
         for (Thread d : douanes) {
             try {
+                d.start();
                 d.join();
             } catch (InterruptedException e) {
                 e.printStackTrace();

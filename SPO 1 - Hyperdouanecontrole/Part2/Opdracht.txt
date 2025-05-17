@@ -1,0 +1,31 @@
+/**
+ * TINPRO04-4 Les 5
+ * SPO 2 - Multithreaded containers inladen
+ * 20240506 // m.skelo@hr.nl
+ */
+
+Bij de douanecontrole worden een paar foute containers eruit gepikt,
+en wordt de rest op de kade gezet om later op het schip geladen te worden.
+
+Waar ze bij de douane net leren hoe ze sneller en efficienter kunnen werken,
+kijken de collega's op de kade jaloers over het hek:
+zij willen ook meerdere containers tegelijk kunnen inladen!
+
+De haven wil drie hijskranen aanschaffen om het werk van de kademedewerkers te verlichten.
+De Hijskraan moet checken of de Kade leeg is, voordat er een container op het schip wordt gezet.
+De Kade geeft steeds de eerstvolgende container op de Kade als er nog Containers staan. 
+    --> BONUS: Probeer specifieke Containers op te pakken op basis van Container-ID
+Als de Kade leeg is, returnt deze null.
+Het overladen van een Container duurt tussen de 1 en 6 seconden.
+
+---------------------------       ----------       --------                    ---------
+| Vrachtwagen (Container) |  -->  | Douane |  -->  | Kade |  --[Hijskraan]-->  | Schip |
+---------------------------       ----------       --------                    ---------
+
+Zorg dat meerdere Hijskranen niet dezelfde Container proberen te pakken door gebruik te maken van de stof uit les 5.
+Zorg daarnaast dat elke Hijskraan automatisch stopt wanneer die ziet dat de Kade leeg is.
+
+Bestudeer het bijgeleverde klassendiagram en neem dit over in code. 
+Als je SPO deel 1 gemaakt hebt, kan je direct verder met die code.
+Als je SPO deel 1 nog niet gemaakt hebt, moet je zelf test-Containers maken waar je mee kan testen.
+Teken een sequencediagram voordat je begint.
