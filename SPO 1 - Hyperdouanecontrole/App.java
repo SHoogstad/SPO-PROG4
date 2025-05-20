@@ -7,6 +7,8 @@
 import Part1.Container;
 import Part1.Douane;
 import Part1.Vrachtwagen;
+import Part2.Hijskraan;
+import Part2.Schip;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -68,5 +70,24 @@ public class App {
         }
 
         System.out.println("✅ Alle vrachtwagens zijn gecontroleerd.");
+
+        Schip schip = new Schip();
+
+        List<Thread> hijskranen = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            Hijskraan hijskraan = new Hijskraan("Hijskraan " + (i + 1));
+            hijskranen.add(hijskraan);
+        }
+
+        for(Thread h : hijskranen){
+            try {
+                h.start();
+                h.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println("✅ Alle containers zijn op het schip geplaatst.");
     }
 }

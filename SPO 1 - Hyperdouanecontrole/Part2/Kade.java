@@ -12,13 +12,8 @@ public class Kade {
     }
 
     synchronized public static Container getContainer(){
-        try{
-            if(kade.size() ==0){
-                wait();
-            }
-
-        }catch (Exception e){
-
+        if(kade.isEmpty()){
+            return null;
         }
        return kade.getFirst();
     }

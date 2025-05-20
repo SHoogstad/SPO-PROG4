@@ -1,6 +1,10 @@
 package Part1;
 
+import Part2.Kade;
+
 import java.util.List;
+
+import static Part2.Kade.addContainer;
 
 public class Douane extends Thread {
     private List<Vrachtwagen> wachtrij;
@@ -17,6 +21,8 @@ public class Douane extends Thread {
                 synchronized (System.out) {
                     System.out.println("❌ Container " + container.getID() + " inhoud: " + container.getInhoud());
                 }
+            }else{
+                addContainer(container);
             }
         }
     }
