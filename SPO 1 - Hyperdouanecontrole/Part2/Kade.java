@@ -5,7 +5,7 @@ import Part1.Container;
 import java.util.List;
 
 public class Kade {
-    private static List<Container> kade;
+    private static List<Container> kade = new java.util.LinkedList<Container>();
 
     synchronized public static void addContainer(Container c){
         kade.add(c);
@@ -15,7 +15,9 @@ public class Kade {
         if(kade.isEmpty()){
             return null;
         }
-       return kade.getFirst();
+        Container container = kade.getFirst();
+        kade.removeFirst();
+        return container;
     }
 
     synchronized public static int getSize(){

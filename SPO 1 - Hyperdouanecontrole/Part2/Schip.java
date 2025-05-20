@@ -5,7 +5,7 @@ import Part1.Container;
 import java.util.List;
 
 public class Schip {
-    private static List<Container> schip;
+    private static List<Container> schip = new java.util.LinkedList<Container>();
 
     public static void addContainer(Container c){
         schip.add(c);
@@ -15,7 +15,9 @@ public class Schip {
         if(schip.isEmpty()){
             return null;
         }
-        return schip.getFirst();
+        Container container = schip.getFirst();
+        schip.removeFirst();
+        return container;
     }
 
     public static int getSize(){
