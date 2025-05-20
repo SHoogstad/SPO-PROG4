@@ -62,8 +62,11 @@ public class App {
 
         // Wachten op alle douanes
         for (Thread d : douanes) {
-            try {
                 d.start();
+        }
+
+        for (Thread d : douanes) {
+            try {
                 d.join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -84,6 +87,14 @@ public class App {
 
         for(Thread h : hijskranen){
             h.start();
+        }
+
+        for (Thread h : hijskranen) {
+            try{
+                h.join(); // ⏳ Wait for each to finish, one by one
+            }catch (Exception e){
+                System.out.println("Fout bij het wachten op de hijskraan: " + e.getMessage());
+            }
         }
 
         System.out.println("✅ Alle containers zijn op het schip geplaatst.");
