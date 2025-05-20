@@ -20,6 +20,11 @@ public class Hijskraan extends Thread {
                 int sleepTime = (1000 + (int) (Math.random() * 6000)); // Willekeurige tijd tussen 1 en 3 seconden
 
                 Container container = getContainer(); // container ophalen van de kade
+
+                if(container == null){
+                    throw new InterruptedException();
+                }
+
                 System.out.println(naam + " heeft een container " + container.getID() + " gehesen.");
                 Thread.sleep(sleepTime); // sleep 1 tot 6 seconden
 
