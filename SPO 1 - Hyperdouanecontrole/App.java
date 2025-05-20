@@ -81,8 +81,6 @@ public class App {
         for (int i = 0; i < 3; i++) {
             Hijskraan hijskraan = new Hijskraan("Hijskraan " + i);
             hijskranen.add(hijskraan);
-
-            System.out.println("Hijskraan " + (i + 1) + " aangemaakt.");
         }
 
         for(Thread h : hijskranen){
