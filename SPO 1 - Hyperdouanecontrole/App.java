@@ -13,13 +13,14 @@ import Part2.Schip;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
         List<String> lines;
-        List<Vrachtwagen> kade = new ArrayList<>();
+        List<Vrachtwagen> kade = new LinkedList<>();
 
         // Input lezen uit bestand
         try {
@@ -49,7 +50,7 @@ public class App {
         final int RIJSTROKEN = (int) Math.ceil((double) AANTAL_VRACHTWAGENS / MAX_VRACHTWAGENS_PER_RIJ);
 
         // Threads aanmaken en starten
-        List<Thread> douanes = new ArrayList<>();
+        List<Thread> douanes = new LinkedList<>();
 
         for (int i = 0; i < RIJSTROKEN; i++) {
             int begin = i * MAX_VRACHTWAGENS_PER_RIJ;
@@ -73,19 +74,16 @@ public class App {
 
         Schip schip = new Schip();
 
-        List<Thread> hijskranen = new ArrayList<>();
+        List<Thread> hijskranen = new LinkedList<>();
         for (int i = 0; i < 3; i++) {
-            Hijskraan hijskraan = new Hijskraan("Hijskraan " + (i + 1));
+            Hijskraan hijskraan = new Hijskraan("Hijskraan " + i);
             hijskranen.add(hijskraan);
+
+            System.out.println("Hijskraan " + (i + 1) + " aangemaakt.");
         }
 
         for(Thread h : hijskranen){
-            try {
-                h.start();
-                h.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            h.start();
         }
 
         System.out.println("✅ Alle containers zijn op het schip geplaatst.");
