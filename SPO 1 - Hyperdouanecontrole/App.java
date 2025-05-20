@@ -75,11 +75,9 @@ public class App {
 
         System.out.println("✅ Alle vrachtwagens zijn gecontroleerd.");
 
-        Schip schip = new Schip();
-
         List<Thread> hijskranen = new LinkedList<>();
         for (int i = 0; i < 3; i++) {
-            Hijskraan hijskraan = new Hijskraan("Hijskraan " + i);
+            Hijskraan hijskraan = new Hijskraan("Hijskraan " + (i + 1));
             hijskranen.add(hijskraan);
 
             System.out.println("Hijskraan " + (i + 1) + " aangemaakt.");
