@@ -8,6 +8,7 @@ import Part1.Container;
 import Part1.Douane;
 import Part1.Vrachtwagen;
 import Part2.Hijskraan;
+import Part2.Kade;
 import Part2.Schip;
 
 import java.io.IOException;
@@ -21,6 +22,8 @@ public class App {
     public static void main(String[] args) {
         List<String> lines;
         List<Vrachtwagen> kade = new LinkedList<>();
+
+        Kade kadeClass = new Kade(); // Maak een nieuwe Kade instantie
 
         // Input lezen uit bestand
         try {
@@ -56,7 +59,7 @@ public class App {
             int begin = i * MAX_VRACHTWAGENS_PER_RIJ;
             int eind = Math.min(begin + MAX_VRACHTWAGENS_PER_RIJ, kade.size());
             List<Vrachtwagen> deel = kade.subList(begin, eind);
-            Douane d = new Douane(deel);
+            Douane d = new Douane(deel, kadeClass);
             douanes.add(d);
         }
 
@@ -77,7 +80,7 @@ public class App {
 
         List<Thread> hijskranen = new LinkedList<>();
         for (int i = 0; i < 3; i++) {
-            Hijskraan hijskraan = new Hijskraan("Hijskraan " + (i + 1), kade);
+            Hijskraan hijskraan = new Hijskraan("Hijskraan " + (i + 1), kadeClass);
             hijskranen.add(hijskraan);
         }
 

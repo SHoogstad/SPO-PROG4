@@ -7,7 +7,13 @@ import java.util.List;
 public class Kade {
     private static List<Container> kade = new java.util.LinkedList<Container>();
 
-    synchronized public static void addContainer(Container c){
+    synchronized public void addContainer(Container c){
+        try {
+            notify();
+        }catch (Exception e) {
+            System.out.println("Fout bij het toevoegen van de container: " + e.getMessage());
+        }
+        System.out.println("Het toevoegen van de container: " + c);
         kade.add(c);
     }
 
@@ -20,6 +26,7 @@ public class Kade {
         }
         Container container = kade.getFirst();
         kade.removeFirst();
+        notifyAll();
         return container;
     }
 

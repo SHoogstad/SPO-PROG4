@@ -4,13 +4,14 @@ import Part2.Kade;
 
 import java.util.List;
 
-import static Part2.Kade.addContainer;
 
 public class Douane extends Thread {
     private List<Vrachtwagen> wachtrij;
+    private Kade kade;
 
-    public Douane(List<Vrachtwagen> wachtrij) {
+    public Douane(List<Vrachtwagen> wachtrij, Kade kade) {
         this.wachtrij = wachtrij;
+        this.kade = kade;
     }
 
     @Override
@@ -20,7 +21,7 @@ public class Douane extends Thread {
             if (checkContainer(container)) {
                     System.out.println("❌ Container " + container.getID() + " inhoud: " + container.getInhoud());
             }else{
-                addContainer(container);
+                kade.addContainer(container);
             }
         }
     }
