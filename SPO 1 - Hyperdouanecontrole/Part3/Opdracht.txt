@@ -1,0 +1,41 @@
+/**
+ * TINPRO04-4 Les 10
+ * SPO 3 - Trossen los!
+ * 20240513 // m.skelo@hr.nl
+ */
+
+De kademedewerkers zijn blij met hun nieuwe hijskranen; er wordt ze een hoop werk mee uit handen genomen.
+Alleen klagen de medewerkers best vaak over de vrachtwagenchauffeurs die klakkeloos hun containers op de kade dumpen, 
+waardoor ze erg ver heen en weer moeten met de hijskraan om hem op het schip te laden, wat best inefficient is.
+De kademedewerkers stellen voor om de chauffeurs na de douane door te laten rijden tot aan de hijskranen.
+
+Enige probleem is alleen dat de wachtrij voor de hijskranen maar 5 plekken heeft. Dat betekent dat vrachtwagens soms niet direct 
+door kunnen rijden na de douanecontrole, en moeten wachten bij de douane totdat er een plek in de rij voor de hijskranen is.
+Wanneer dit gebeurt, loopt douanebeambte Leo uit z'n hok om naar de kademensen te schreeuwen dat ze op moeten schieten omdat de A15 begint vast te lopen.
+
+De hijskranen zijn continu bezig met het overladen van containers van de hijskraan-wachtrij naar het schip. 
+Het kan voorkomen dat de wachtrij leeg raakt terwijl een hijskraan een container van een vrachtwagen probeert op te pakken. 
+In zo'n geval staat de hijskraan even stil terwijl die op nieuwe containers wacht. 
+Wanneer dit gebeurt, schreeuwt kraanmachinist Bob in de richting van de douane "tijd is geld, schiet op!", 
+terwijl hij nog iets over ambtenaren mompelt onder z'n stem.
+
+Anders gezegd:
+
+De Douane zal nu nog steeds proberen een gecheckte Container op de Kade te zetten. 
+Tijdens dat proces, maar voordat de Container daadwerkelijk op de Kade wordt geplaatst, checkt de Kade of de Container past. 
+Zo niet, moet er gewacht worden totdat een Hijskraan een Container opgepakt heeft.
+Andersom: als de Kade leeg raakt, moet er een signaal naar de Douane om meer Containers aan te leveren, en wacht de Kade op dat signaal.
+
+
+// ========================= //
+//           EISEN           //
+// ========================= //
+
+- De Douane doet tussen de 1 en 6 seconden over de controle.
+- Het overladen van een Container naar het Schip door een Hijskraan kost altijd precies 3 seconden.
+- Gebruik van notify()/wait() (of notifyAll()) is verplicht bij het afstemmen van het schip en kranen, en de kade en kranen
+	- Geen hardcoded sleep() dus, behalve bij bovenstaande twee eisen.
+
+Tip: Enkele fields en methods die bij SPO2 `static` waren, hoeven/kunnen dat nu niet meer zijn. Hoe komt dit?
+
+Om een idee te krijgen van de werking en volgorde van het programma: zie het meegeleverde bestand `SPO3_sample_output.txt`
