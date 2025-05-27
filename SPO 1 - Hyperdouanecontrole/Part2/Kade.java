@@ -11,9 +11,12 @@ public class Kade {
         kade.add(c);
     }
 
-    synchronized public static Container getContainer(){
-        if(kade.isEmpty()){
-            return null;
+    synchronized public Container getContainer(){
+        while (kade.isEmpty()){
+            try{
+                wait();
+            }catch (InterruptedException e){
+            }
         }
         Container container = kade.getFirst();
         kade.removeFirst();

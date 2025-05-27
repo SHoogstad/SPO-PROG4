@@ -17,10 +17,8 @@ public class Douane extends Thread {
     public void run() {
         for (Vrachtwagen vrachtwagen : wachtrij) {
             Container container = vrachtwagen.getContainer();
-            if (!checkContainer(container)) {
-                synchronized (System.out) {
+            if (checkContainer(container)) {
                     System.out.println("❌ Container " + container.getID() + " inhoud: " + container.getInhoud());
-                }
             }else{
                 addContainer(container);
             }

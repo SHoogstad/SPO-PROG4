@@ -11,9 +11,12 @@ public class Schip {
         schip.add(c);
     }
 
-    public static Container getContainer(){
-        if(schip.isEmpty()){
-            return null;
+    public Container getContainer(){
+        while (schip.isEmpty()){
+            try {
+                wait();
+            }catch (InterruptedException e) {
+            }
         }
         Container container = schip.getFirst();
         schip.removeFirst();

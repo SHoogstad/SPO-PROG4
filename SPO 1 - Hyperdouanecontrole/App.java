@@ -77,7 +77,7 @@ public class App {
 
         List<Thread> hijskranen = new LinkedList<>();
         for (int i = 0; i < 3; i++) {
-            Hijskraan hijskraan = new Hijskraan("Hijskraan " + (i + 1));
+            Hijskraan hijskraan = new Hijskraan("Hijskraan " + (i + 1), kade);
             hijskranen.add(hijskraan);
         }
 
